@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: 0;
+    list-style: none;
+
+}
+
+body{
+    font-family: 'Poppins';
+}
+
+header{
+    background: #5e7669;
+    background-image: url();
+   
+}
+
+.navbar{
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}
+.navbar .logo{
+    font-size: 2em;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar .nav_links ul{
+    display: flex;
+    
+}
+
+    
+.navbar .nav_links ul li {
+    margin: 0 25px;
+}
+.navbar .nav_links ul li a{
+     color: white;
+    
+}
+    
+.navbar .nav_links ul li.active a{
+    color: white;
+    font-weight: 600;
+    
+}
+
+#vote_en_cours{
+    padding: 15px ;
+    border:none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color:#5e7669;;
+    outline: none;
+    cursor: pointer;
+    margin-top: 150px;
+    display: block;
+}
+
+#vote_termine{
+    padding: 15px ;
+    border:none;
+    border-radius: 5px;
+    font-size: 15px;
+    background-color:#5e7669;;
+    outline: none;
+    cursor: pointer;
+    margin-top: 150px;
+    display: block;
+   }

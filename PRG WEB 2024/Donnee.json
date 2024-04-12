@@ -1,0 +1,185 @@
+{
+    "L3_MIAGE": [
+        {
+            "nom": "Meite",
+            "prenom": "Malika",
+            "email": "malika.meite@gmail.com",
+            "mot_de_passe": "12345"
+        },
+        {
+            "nom": "mms",
+            "prenom": " njnzx",
+            "email": "sinai.meite@gmail.com",
+            "mot_de_passe": "Mms"
+        },
+        {
+            "nom": "meite",
+            "prenom": "Malika Sina\u00ef",
+            "email": "mms@gmail.com",
+            "mot_de_passe": "123"
+        },
+        {
+            "nom": "Perras",
+            "prenom": "Mo\u00efse",
+            "email": "moise@gmail.com",
+            "mot_de_passe": "123"
+        },
+        {
+            "nom": "azangue",
+            "prenom": "fomat gide",
+            "email": "gide@gmail.com",
+            "mot_de_passe": "Gide123"
+        }
+    ],
+    "L3_INFO": [
+        {
+            "nom": "Soumahoro",
+            "prenom": "EL Hadj Namory",
+            "email": "ElHadj@gmail.com",
+            "mot_de_passe": "456"
+        },
+        {
+            "nom": "kohou",
+            "prenom": "Anatou",
+            "email": "anatou123@gmail.com",
+            "mot_de_passe": "Ana123"
+        },
+        {
+            "nom": "savane",
+            "prenom": "djene",
+            "email": "djene@gmail.com",
+            "mot_de_passe": "1234"
+        }
+    ],
+    "PROF_PROG_WEB": [],
+    "scrutin": [
+        {
+            "nom_organisateur": "mms",
+            "titre": "Vote 1",
+            "question": "Quel transport utilisez vous ?",
+            "choix_1": "Bus",
+            "choix_2": "velo",
+            "choix_3": "Voiture",
+            "statut": "Terminer",
+            "bulletin": [
+                "choix_1"
+            ]
+        },
+        {
+            "nom_organisateur": "Perras",
+            "titre": "vote 2",
+            "question": "ulez vous comme pr\u00e9sident ?",
+            "choix_1": "Malika",
+            "choix_2": "gide",
+            "choix_3": "fatimata",
+            "statut": "Terminer",
+            "bulletin": [
+                "choix_1",
+                "choix_2",
+                "choix_3"
+            ]
+        },
+        {
+            "nom_organisateur": "Meite",
+            "titre": "kr",
+            "question": "ed",
+            "choix_1": "e",
+            "choix_2": "d",
+            "choix_3": "w",
+            "statut": "Terminer",
+            "bulletin": [
+                "choix_1"
+            ]
+        }
+    ],
+    "votant": [
+        {
+            "titre du vote": "Vote 1",
+            "nom": "Meite",
+            "prenom": "Malika",
+            "email": "malika.meite@gmail.com",
+            "nb_proc": "1",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "Vote 1",
+            "nom": "mms",
+            "prenom": " njnzx",
+            "email": "sinai.meite@gmail.com",
+            "nb_proc": "1",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "vote 2",
+            "nom": "Meite",
+            "prenom": "Malika",
+            "email": "malika.meite@gmail.com",
+            "nb_proc": "2",
+            "voter": "oui"
+        },
+        {
+            "titre du vote": "vote 2",
+            "nom": "mms",
+            "prenom": " njnzx",
+            "email": "sinai.meite@gmail.com",
+            "nb_proc": "NaN",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "vote 2",
+            "nom": "meite",
+            "prenom": "Malika Sina\u00ef",
+            "email": "mms@gmail.com",
+            "nb_proc": "NaN",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "vote 2",
+            "nom": "Perras",
+            "prenom": "Mo\u00efse",
+            "email": "moise@gmail.com",
+            "nb_proc": "NaN",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "kr",
+            "nom": "Meite",
+            "prenom": "Malika",
+            "email": "malika.meite@gmail.com",
+            "nb_proc": "1",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "kr",
+            "nom": "mms",
+            "prenom": " njnzx",
+            "email": "sinai.meite@gmail.com",
+            "nb_proc": "1",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "kr",
+            "nom": "meite",
+            "prenom": "Malika Sina\u00ef",
+            "email": "mms@gmail.com",
+            "nb_proc": "0",
+            "voter": "non"
+        },
+        {
+            "titre du vote": "kr",
+            "nom": "Perras",
+            "prenom": "Mo\u00efse",
+            "email": "moise@gmail.com",
+            "nb_proc": "0",
+            "voter": "oui"
+        },
+        {
+            "titre du vote": "kr",
+            "nom": "azangue",
+            "prenom": "fomat gide",
+            "email": "gide@gmail.com",
+            "nb_proc": "1",
+            "voter": "non"
+        }
+    ]
+}
