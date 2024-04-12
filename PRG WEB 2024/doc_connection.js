@@ -15,7 +15,7 @@ function traitement_connection(){
     var inputMotDePasseCo = document.querySelector("#mdp_co");
     var inputSelect = document.querySelector('#s2');
     var feedback_co = document.querySelector("#message_co");
-
+    // Savoir si l'utilisateur a rentré des données.
     if (inputEmailCo.value.length < 1 || inputMotDePasseCo.value.length < 1) {
         feedback_co.innerText = "Remplissez tous les champs s'il vous plaît";
         feedback_co.style.display = "block";
@@ -30,6 +30,7 @@ function traitement_connection(){
         "mot_de_passe": inputMotDePasseCo.value,
         "type": inputSelect.value,
     };
+    //l'nvoie des données a php pour qu"il vérifie si le compte existe
     $.ajax({
         method: "POST",
         dataType: "json",

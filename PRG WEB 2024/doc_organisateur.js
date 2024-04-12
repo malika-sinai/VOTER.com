@@ -8,6 +8,7 @@ var nom = document.getElementById("nom").getAttribute("data_nom");
 var email = document.getElementById("nom").getAttribute("data_email");
 //console.log(email);
 
+//la fonction pour récuperer l'email et le nombre de procuration de la personne dans un tableau
 function recup_proc(tab_id){
      var tab = document.getElementById(tab_id);
      var resultat = [];
@@ -33,6 +34,7 @@ function scrutin(){
     nouv_scrutin.style.display = "none";
     ex_scrutin.style.display = "none";
     mes_votes.style.display = "none";
+    //requette ajax qui va permettre à php de renvoyer le code html pour la creation de scrutin
     $.ajax ({
        method:"POST",
        dataType:"json",
@@ -40,7 +42,7 @@ function scrutin(){
        data:{"action":nouveau_scrutin.value}
     }).done(function(retour){
         console.log(retour.reponse);
-        
+        //ajout du formulaire retourné par php
         var formulaire_scrutin = document.createElement("div");
         formulaire_scrutin.innerHTML = retour.reponse;
         formulaire_scrutin.style.alignItems = "center";
@@ -51,7 +53,7 @@ function scrutin(){
         document.body.appendChild(style_form);
 
         var terminer = document.getElementById("fini");
-        
+        //requette ajax qui va permettre à php de renvoyer le code html pour le choix du groupe auxquels le vote est destiné
         terminer.addEventListener('click',function(){
         $.ajax ({
             method:"POST",
@@ -69,9 +71,11 @@ function scrutin(){
           console.log(retour2.message);
           var formulaire_scrutin = document.getElementById("scrutin_form");
           var titre_scrutin = document.getElementById("scrutin_title");
+          //j'efface les éléments déjà présent sur la page vu qu'il n'y a pas de rédirection
           formulaire_scrutin.style.display = "none";
           titre_scrutin.style.display = "none";
           terminer.style.display = "none";
+          // ajout de la reponse qui est un select avec tout les groupe existant dans mon tableau json
           var choix_listeVotant = document.createElement('div');
           choix_listeVotant.innerHTML= '<h2 id= "consigne">veillez choisir la liste des votants </h2><form id = "select_listeVotant"> <select id = "liste"><option value = "L3_MIAGE">L3 MIAGE</option><option value = "L3_INFO">L3 INFO</option><option value = "PROF_PROG_WEB">Professeur de prog web</option></select> </form> <input type = button value = "choisir" id ="choisir">';
           var style_listeVotant = document.createElement("style");
@@ -81,7 +85,9 @@ function scrutin(){
           document.body.appendChild(choix_listeVotant);
           document.body.appendChild(style_listeVotant);
           document.getElementById("choisir").addEventListener('click',function(){
-          $.ajax({
+          //envoi de la requette ajax qui va permettre à l'organisateur d'ajouter une procuration 
+          // a chaque personne dans la liste qu'il a choisi
+           $.ajax({
             method:"POST",
             dataType:"json",
             url : "traitement2.php",
@@ -103,7 +109,7 @@ function scrutin(){
                document.body.appendChild(style_listeChoisir);
                document.getElementById("ok").addEventListener('click',function(){
                     console.log(recup_proc("liste_choisi"));
-                    $.ajax({
+                    $.ajax({ //requtte qui va envoyer la liste contenant l'email et le nombre de procuration de chaque email
                          method:"POST",
                          dataType:"json",
                          url : "traitement3.php",
@@ -119,7 +125,7 @@ function scrutin(){
                          document.getElementById("ajout_title").style.display = "none";
                          
                          var msg_fin = document.createElement("div");
-                         msg_fin.innerHTML= "<h1> le vote a bien été créer,merci !</h1>";
+                         msg_fin.innerHTML= "<h1> le vote a bien été créer,merci !</h1>"; //fin de création du vote
                          document.body.appendChild(msg_fin);
                
                     })
@@ -139,21 +145,22 @@ function scrutin(){
 
 }
 
+//fonction pour voir les scrutins archivés
 function scrutin_archive(){
     nouv_scrutin.style.display = "none";
     ex_scrutin.style.display = "none";
     mes_votes.style.display = "none";
-    $.ajax ({
+    $.ajax ({ // requette ajax qui va retourner la liste des crutins qui ont pour statut terminé dans mon tableau JSON
        method:"POST",
        dataType:"json",
        url : "traitement10.php",
        data:{"nom":nom,"email":email}
     }).done(function(reponse10){
-        console.log(reponse10.liste_vote);
-        console.log(reponse10.liste_vote_org);
+        console.log(reponse10.liste_vote); //la liste des votes archiés auxquels il peut voter
+        console.log(reponse10.liste_vote_org);//la liste des vots archivés qu'il a organisé
         var liste_vote = document.createElement("div");
         var liste_vote_org = document.createElement("div");
-        if(reponse10.liste_vote == '<h2 id= "no_table_archive_org">Vous n avez pas de vote terminé.</h2>'){
+        if(reponse10.liste_vote == '<h2 id= "no_table_archive_org">Vous n avez pas de vote terminé.</h2>'){ //on vérifie si il n'y a pas de vote archivé
           liste_vote.innerHTML=reponse10.liste_vote;
           document.body.appendChild(liste_vote);
           liste_vote_org.innerHTML = reponse10.liste_vote_org;
@@ -259,6 +266,7 @@ function scrutin_archive(){
     
 }
 
+//fonction qui permet de voir les votes en cours
 function voteEnCours(){
      nouv_scrutin.style.display = "none";
      ex_scrutin.style.display = "none";
